@@ -8,8 +8,8 @@ import (
 
 func main() {
 	index := func(w http.ResponseWriter, req *http.Request) {
-		io.WriteString(w, "hesds sdssadasdad llod")
-	} 
+		io.WriteString(w, "hesdllsaasddsdaadasd sd sdod")
+	}
 
 	http.HandleFunc("/", index)
 
