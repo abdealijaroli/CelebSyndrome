@@ -1,8 +1,8 @@
 build:
-	go build -o ./bin/main.exe ./cmd/main.go
+	@go build -o ./bin/main.exe ./cmd/main.go
 
 run:
-	go run ./bin/main.exe
+	@./bin/main.exe
 
 start:
-	air
+	@air

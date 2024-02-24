@@ -8,12 +8,10 @@ import (
 
 func main() {
 	index := func(w http.ResponseWriter, req *http.Request) {
-		io.WriteString(w, "hesdllsaasddsdaadasd sd sdod")
+		io.WriteString(w, "hello world")
 	}
 
 	http.HandleFunc("/", index)
-
-	fmt.Println("Server is running on port 8080")
 
 	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
