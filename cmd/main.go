@@ -1,22 +1,19 @@
 package main
 
 import (
-	"fmt"
-	"io"
 	"net/http"
+
+	"github.com/abdealijaroli/gostream/handler"
 )
 
 func main() {
-	index := func(w http.ResponseWriter, req *http.Request) {
-		io.WriteString(w, "hello world")
-	}
+	fs := http.FileServer(http.Dir("./view"))
+	http.Handle("/", fs)
 
-	http.HandleFunc("/", index)
+	http.HandleFunc("/celeb", handler.CelebHandler)
 
 	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
-		fmt.Println(err)
-	} else {
-		fmt.Println("Server is running on port 8080")
+		panic(err)
 	}
 }
