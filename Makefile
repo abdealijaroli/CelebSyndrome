@@ -4,5 +4,5 @@ build:
 run:
 	@./bin/main.exe
 
-start:
+air:
 	@air
