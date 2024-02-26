@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CelebSyndrome</title>
+        <link rel="stylesheet" type="text/css" href="./styles.css" />
+        <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.14.0/cdn/themes/light.css"
+        />
+        <script
+            type="module"
+            src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.14.0/cdn/shoelace-autoloader.js"
+        ></script>
+        <link
+            href="https://api.fontshare.com/v2/css?f[]=general-sans@500&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <div class="content">
+            <h1 slot="header">CelebSyndrome</h1>
+            <h3>What Your Celebrity Crush Says About You?</h3>
+            <form class="form" hx-post="/celeb" hx-target="#result">
+                <input
+                    type="text"
+                    name="celeb"
+                    placeholder="Enter your favourite celebrity"
+                ></input>
+                <sl-button type="submit" variant="primary" outline
+                    >Let's go!</sl-button
+                >
+            </form>
+            <div id="result" class="skeleton-effects"></div>
+        </div>
+    </body>
+</html>
