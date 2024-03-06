@@ -23,6 +23,11 @@ func main() {
 	}
 	defer db.Close()
 
+	err = util.CreateUserTable(db)
+	if err != nil {
+		log.Fatal("Error creating user table:", err)
+	}
+
 	fs := http.FileServer(http.Dir("./view"))
 	http.Handle("/", fs)
 

@@ -21,3 +21,8 @@ func ConnectDB() (*sql.DB, error) {
 
 	return db, nil
 }
+
+func CreateUserTable(db *sql.DB) error {
+	_, err := db.Exec("CREATE TABLE IF NOT EXISTS users (id SERIAL PRIMARY KEY, credits INT)")
+	return err
+}
